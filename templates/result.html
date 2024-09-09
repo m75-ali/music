@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Your Music Genre Match: {{ genre }}</h2>
+<p>You are most aligned with <strong>{{ genre }}</strong> music!</p>
+<p>Explore and enjoy music of this genre. Check out some popular artists and tracks to get started!</p>
+<a href="{{ url_for('home') }}" class="btn">Take Quiz Again</a>
+{% endblock %}

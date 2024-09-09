@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "question": "What is your favorite activity?",
+        "options": ["Dancing", "Reading", "Traveling", "Gaming", "Cooking", "Photography"]
+    },
+    {
+        "id": 2,
+        "question": "Choose a preferred instrument:",
+        "options": ["Guitar", "Piano", "Drums", "Synthesizer", "Violin", "Saxophone"]
+    },
+    {
+        "id": 3,
+        "question": "Pick a favorite time of day:",
+        "options": ["Morning", "Afternoon", "Evening", "Night", "Late Night", "Midday"]
+    },
+    {
+        "id": 4,
+        "question": "How do you usually spend your weekends?",
+        "options": ["Hiking", "Watching Movies", "Visiting Friends", "Playing Sports", "Relaxing at Home", "Shopping"]
+    },
+    {
+        "id": 5,
+        "question": "What type of music do you listen to while working?",
+        "options": ["Classical", "Lo-fi", "Electronic", "Rock", "Jazz", "Ambient"]
+    },
+    {
+        "id": 6,
+        "question": "How do you feel about attending live concerts?",
+        "options": ["Love it", "It's okay", "Not a fan", "Never been", "Prefer small gigs", "Enjoy virtual concerts"]
+    },
+    {
+        "id": 7,
+        "question": "What kind of books do you enjoy?",
+        "options": ["Fiction", "Non-Fiction", "Biography", "Science Fiction", "Fantasy", "Mystery"]
+    }
+]

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Quiz</h2>
+<form method="POST">
+    {% for question in questions %}
+    <div class="question">
+        <p><strong>{{ question.id }}. {{ question.question }}</strong></p>
+        {% for option in question.options %}
+        <label>
+            <input type="checkbox" name="question_{{ question.id }}[]" value="{{ option }}">
+            {{ option }}
+        </label>
+        {% endfor %}
+    </div>
+    {% endfor %}
+    <button type="submit" class="btn">See Results</button>
+</form>
+{% endblock %}
