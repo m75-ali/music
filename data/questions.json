@@ -27,7 +27,7 @@
     {
         "id": 6,
         "question": "How do you feel about attending live concerts?",
-        "options": ["Love it", "It's okay", "Not a fan", "Never been", "Prefer small gigs", "Enjoy virtual concerts"]
+        "options": ["Love it", "Its okay", "Not a fan", "Never been", "Prefer small gigs", "Enjoy virtual concerts"]
     },
     {
         "id": 7,

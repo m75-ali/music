@@ -15,27 +15,38 @@ def load_questions():
 questions = load_questions()
 
 # Function to calculate the music genre
+# Function to calculate the music genre
 def calculate_genre(answers):
-    genre_scores = {'Pop': 0, 'Rock': 0, 'Jazz': 0, 'EDM': 0, 'Hip-Hop': 0, 'Classical': 0}
+    # Detailed mapping of answers to genres
+    genre_mapping = {
+        'Dancing': 'EDM', 'Synthesizer': 'EDM', 'Night': 'EDM', 'Partying': 'EDM',
+        'Reading': 'Jazz', 'Piano': 'Jazz', 'Morning': 'Jazz', 'Relaxing': 'Jazz',
+        'Traveling': 'Rock', 'Guitar': 'Rock', 'Evening': 'Rock', 'Exploring': 'Rock',
+        'Gaming': 'Pop', 'Drums': 'Pop', 'Afternoon': 'Pop', 'Socializing': 'Pop',
+        'Street Culture': 'Hip-Hop', 'Rap': 'Hip-Hop', 'Beats': 'Hip-Hop', 'Urban': 'Hip-Hop',
+        'Orchestra': 'Classical', 'Violin': 'Classical', 'Symphony': 'Classical', 'Calm': 'Classical',
+        'Cooking': 'Jazz', 'Photography': 'Jazz', 'Hiking': 'Rock', 'Watching Movies': 'Pop',
+        'Visiting Friends': 'Pop', 'Playing Sports': 'Rock', 'Relaxing at Home': 'Jazz',
+        'Shopping': 'EDM', 'Lo-fi': 'Jazz', 'Electronic': 'EDM', 'Rock': 'Rock',
+        'Jazz': 'Jazz', 'Ambient': 'Classical', 'Classical': 'Classical',
+        'Love it': 'Rock', 'Its okay': 'Jazz', 'Not a fan': 'Classical', 
+        'Never been': 'Classical', 'Prefer small gigs': 'Jazz', 'Enjoy virtual concerts': 'EDM'
+    }
+
+    genre_scores = {genre: 0 for genre in set(genre_mapping.values())}
     
+    # Calculate scores based on answers
     for answer_list in answers.values():
         for answer in answer_list:
-            # Expanded answers with different preferences and habits
-            if answer in ['Dancing', 'Synthesizer', 'Night', 'Partying']:
-                genre_scores['EDM'] += 1
-            elif answer in ['Reading', 'Piano', 'Morning', 'Relaxing']:
-                genre_scores['Jazz'] += 1
-            elif answer in ['Traveling', 'Guitar', 'Evening', 'Exploring']:
-                genre_scores['Rock'] += 1
-            elif answer in ['Gaming', 'Drums', 'Afternoon', 'Socializing']:
-                genre_scores['Pop'] += 1
-            elif answer in ['Street Culture', 'Rap', 'Beats', 'Urban']:
-                genre_scores['Hip-Hop'] += 1
-            elif answer in ['Orchestra', 'Violin', 'Symphony', 'Calm']:
-                genre_scores['Classical'] += 1
-    
-    genre = max(genre_scores, key=genre_scores.get)
-    return genre
+            if answer in genre_mapping:
+                genre_scores[genre_mapping[answer]] += 1
+
+    # Debugging output to monitor the scores
+    print("Genre Scores:", genre_scores)
+
+    # Determine the genre with the maximum score
+    highest_score_genre = max(genre_scores, key=genre_scores.get)
+    return highest_score_genre
 
 @app.route('/')
 def home():

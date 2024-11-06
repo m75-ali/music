@@ -1,19 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>Quiz</h2>
-<form method="POST">
-    {% for question in questions %}
-    <div class="question">
-        <p><strong>{{ question.id }}. {{ question.question }}</strong></p>
-        {% for option in question.options %}
-        <label>
-            <input type="checkbox" name="question_{{ question.id }}[]" value="{{ option }}">
-            {{ option }}
-        </label>
+<div class="container mx-auto px-4">
+    <h2 class="text-xl text-center text-blue-500 font-bold my-4">Quiz</h2>
+    <form method="POST" class="space-y-6">
+        {% for question in questions %}
+        <div class="block p-6 rounded-lg shadow-lg bg-white max-w-md">
+            <p class="text-gray-700 text-base mb-4"><strong>{{ question.id }}. {{ question.question }}</strong></p>
+            {% for option in question.options %}
+            <div class="form-check">
+                <label class="inline-flex items-center">
+                    <input type="checkbox" class="form-checkbox text-blue-600" name="question_{{ question.id }}[]" value="{{ option }}">
+                    <span class="ml-2">{{ option }}</span>
+                </label>
+            </div>
+            {% endfor %}
+        </div>
         {% endfor %}
-    </div>
-    {% endfor %}
-    <button type="submit" class="btn">See Results</button>
-</form>
+        <button type="submit" class="px-6 py-2 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">See Results</button>
+    </form>
+</div>
 {% endblock %}
