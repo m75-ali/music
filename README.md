@@ -8,9 +8,6 @@ Welcome to the Music Quiz project! This application is designed to test your kno
 ### Features
 
 - Multiple choice questions
-- Timed quizzes
-- Score tracking
-- Leaderboards
 
 ### Installation
 
